@@ -339,3 +339,17 @@ body {
     box-shadow: 2px 2px 0 #090;
     transform: translate(2px, 2px);
 }
+
+pre {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: "Courier New", monospace;
+    overflow-x: auto;
+
+}
+
+code {
+    color: #656162;
+
+}

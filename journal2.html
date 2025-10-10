@@ -38,25 +38,43 @@
                         encounter issues such
                         as version updates, which can cause problems in the running environment. Therefore, environment
                         management is necessary.
-                        We use Conda as the environment management tool. At the same time, we also use the command line
-                        "pip install xxx" to install
+                        We use <code>Conda</code> as the environment management tool. At the same time, we also use the
+                        command line
+                        <code> pip install xxx </code>to install
                         the required libraries.
 
                         In addition, we went over the dict type in Python in detail. This type can nest multiple types.
                         For example, the key can
-                        be a string and the value can be a list, like: shopping = {'vegetables': ['a', 'b', 'c']}. It
-                        can also have a key whose value is another key-value pair, for example:
-                        shopping_2 = {'vegetables': {'green': ['a', 'b', 'c'], 'orange': ['e', 'f', 'g']}}. When you
+                        be a string and the value can be a list,
+                        like:<code>shopping = {'vegetables': ['a', 'b', 'c']}</code>. It
+                        can also have a key whose value is another key-value pair, for example:<code>
+                        shopping_2 = {'vegetables': {'green': ['a', 'b', 'c'], 'orange': ['e', 'f', 'g']}}</code>. When you
                         want to access a specific piece of data, you need to use the correct order of indexing, for
-                        example: print(shopping_2['vegetables']['green'][1])
-                        This week's assignment is related to accessing APIs, and it involves the requests library. The
+                        example:
+                    <pre><code>
+                shopping_2 = {'vegetables': {'green': ['a', 'b', 'c'], 'orange': ['e', 'f', 'g']}}
+                print(shopping_2['vegetables']['green'][1])
+                        </code></pre>
+                    </p>
+                    <p> This week's assignment is related to accessing APIs, and it involves the requests library. The
                         API provides information
                         about local weather conditions. When you use get to retrieve data, it returns a collection of
                         data that includes lists
                         and dictionaries. You need to use indices to locate the data you need, then access the
-                        corresponding keys (using
-                        x.keys()), and finally iterate to get the values, for example:for value in datakey:
-                        print(weather[value])
+                        corresponding keys <code> (use
+                        x.keys())</code>, and finally iterate to get the values, for example:
+                    <pre>
+                            <code>
+                                response = requests.get(url)
+                                data = response.json()
+
+                                weather = data['weather'][0]
+                                dataKey = weather.keys()
+
+                                for value in dataKey:
+                                    print(weather[value])
+                            </code>
+                        </pre>
                     </p>
 
 

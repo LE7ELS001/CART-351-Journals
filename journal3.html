@@ -38,25 +38,73 @@
                         writing HTML with Java in the past, Flask allows web pages to dynamically display different
                         results based on user input
                         and retrieve data from
-                        a database to render on the page.
-                        In Flask, the code app = Flask(__name__) means that we are turning the current file into a web
-                        application, and we use
-                        the variable app to reference it.
-                        And some code like: @app.route('/')
-                        def xxx():
-                        return render_template("xxx.html")
-                        app.run()
-                        This allows us to use Flask to serve the corresponding HTML page and display it in the browser.
-                        We also learned some Jinja2 syntax. For instance:
-                        def xxx():
-                        userChoice = False
-                        return render_template("a.html", answer = userChoice)
-                        In the corresponding a.html, if we have:
-                        {% if answer %}
-                        p The answer is Yes p
+                        a database to render on the page. The initial setup of Flask is like this:
+                    <pre>
+                            <code>
+                                from flask import Flask
 
-                        {% endif %}
-                        then the browser will display “The answer is Yes.”
+                                app = Flask(__name__)
+
+                                @app.route('/')
+                                def index():
+                                    return "Hello, World!"
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        In Flask, the code <code>app = Flask(__name__)</code> means that we are turning the current file
+                        into a web
+                        application, and <code> @app.route('/') def index() return "hello, world"</code>. When a user
+                        visits http://127.0.0.1:5000/, the contents of the def index() function are automatically
+                        executed, and
+                        whatever it returns is sent to the browser. The return content in def index() not only can be a
+                        string, but also can be something like
+                        <code>&ltp&gt&lth1&gt This is CART 351&lt/h1&gt &lt/p&gt</code>
+                        However, this is not so convenient for writing complex HTML. Therefore, Flask allows us to
+                        return a html file.
+                        The code now change to:
+                    <pre>
+                            <code>
+                                from flask import Flask, render_template
+
+                                app = Flask(__name__)
+
+                                @app.route('/')
+                                def index():
+                                    return render_template("index.html")
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        This allows us to use Flask to serve the corresponding HTML page and display it in the browser.
+                        And We also able to change the content in the html file by using Jinja2 syntax. For instance:
+                    <pre>
+                            <code>
+                                Index.html
+
+                                &ltbody&gt
+                                    &ltp&gt The answer is {{ answer }} &lt/p&gt
+                                &lt/body&gt
+                            </code>
+                        </pre>
+                    </p>
+
+                    <p>
+                    <pre>
+                            <code>
+                                main.py 
+
+                                @app.route('/')
+                                def index():
+                                    answer = "Yes"
+                                    return render_template("index.html", answer=answer)
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Then the browser will display “The answer is Yes.”
+                        The <code>{{ answer }}</code> is the Jinja syntax, and you can pass a value to it in
+                        <code>main.py</code>.
                     </p>
 
 
