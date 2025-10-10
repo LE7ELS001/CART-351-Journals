@@ -18,7 +18,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 
@@ -56,6 +56,7 @@ body {
     padding: 30px;
     background-color: #000;
     box-shadow: 0 0 25px rgba(0, 255, 0, 0.4);
+    margin-bottom: 40px;
 }
 
 
