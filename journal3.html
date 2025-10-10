@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journals</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="scanline"></div>
+    <div class="container">
+
+        <div class="pixel-corner top-left"></div>
+        <div class="pixel-corner top-right"></div>
+        <div class="pixel-corner bottom-left"></div>
+        <div class="pixel-corner bottom-right"></div>
+
+
+        <div class="alien alien-1"></div>
+        <div class="alien alien-2"></div>
+        <div class="alien alien-3"></div>
+
+        <div class="content-box">
+            <div class="title">
+                <h1>Journal #3</h1>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="content">
+                <p><strong>September 29th</strong></p>
+
+
+                <div class="content-text">
+                    <p>This week, we focused on Flask, a web framework written in Python. Unlike the static approach of
+                        writing HTML with Java in the past, Flask allows web pages to dynamically display different
+                        results based on user input
+                        and retrieve data from
+                        a database to render on the page.
+                        In Flask, the code app = Flask(__name__) means that we are turning the current file into a web
+                        application, and we use
+                        the variable app to reference it.
+                        And some code like: @app.route('/')
+                        def xxx():
+                        return render_template("xxx.html")
+                        app.run()
+                        This allows us to use Flask to serve the corresponding HTML page and display it in the browser.
+                        We also learned some Jinja2 syntax. For instance:
+                        def xxx():
+                        userChoice = False
+                        return render_template("a.html", answer = userChoice)
+                        In the corresponding a.html, if we have:
+                        {% if answer %}
+                        p The answer is Yes p
+
+                        {% endif %}
+                        then the browser will display “The answer is Yes.”
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="journal2.html" class="nav-btn prev">◀ Previous</a>
+            <a href="index.html" class="nav-btn prev">Home</a>
+            <a href="#" class="nav-btn next">Next ▶</a>
+        </div>
+    </div>
+</body>
+
+</html>

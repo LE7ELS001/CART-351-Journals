@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #0a0a0a;
+    color: #0f0;
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.scanline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(0, 255, 0, 0.03) 50%,
+            rgba(0, 0, 0, 0.1) 50%);
+    background-size: 100% 4px;
+    z-index: 999;
+    pointer-events: none;
+    animation: scanline 10s linear infinite;
+}
+
+@keyframes scanline {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 0 100%;
+    }
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    border: 6px solid #0f0;
+    padding: 30px;
+    background-color: #000;
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.4);
+}
+
+
+.pixel-corner {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: #0f0;
+}
+
+.top-left {
+    top: -6px;
+    left: -6px;
+}
+
+.top-right {
+    top: -6px;
+    right: -6px;
+}
+
+.bottom-left {
+    bottom: -6px;
+    left: -6px;
+}
+
+.bottom-right {
+    bottom: -6px;
+    right: -6px;
+}
+
+
+.alien {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    background-color: #0f0;
+    z-index: 5;
+}
+
+.alien-1 {
+    top: 15px;
+    left: 15px;
+    clip-path: polygon(0% 40%, 20% 40%, 20% 20%, 40% 20%, 40% 0%, 60% 0%, 60% 20%, 80% 20%, 80% 40%, 100% 40%, 100% 60%, 80% 60%, 80% 80%, 60% 80%, 60% 100%, 40% 100%, 40% 80%, 20% 80%, 20% 60%, 0% 60%);
+    animation: float 6s ease-in-out infinite;
+}
+
+.alien-2 {
+    top: 15px;
+    right: 15px;
+    clip-path: polygon(0% 40%, 20% 40%, 20% 20%, 40% 20%, 40% 0%, 60% 0%, 60% 20%, 80% 20%, 80% 40%, 100% 40%, 100% 60%, 80% 60%, 80% 80%, 60% 80%, 60% 100%, 40% 100%, 40% 80%, 20% 80%, 20% 60%, 0% 60%);
+    transform: scaleX(-1);
+    animation: float 7s ease-in-out infinite 1s;
+}
+
+.alien-3 {
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    clip-path: polygon(0% 40%, 20% 40%, 20% 20%, 40% 20%, 40% 0%, 60% 0%, 60% 20%, 80% 20%, 80% 40%, 100% 40%, 100% 60%, 80% 60%, 80% 80%, 60% 80%, 60% 100%, 40% 100%, 40% 80%, 20% 80%, 20% 60%, 0% 60%);
+    animation: float 5s ease-in-out infinite 0.5s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+.content-box {
+    background-color: #111;
+    padding: 40px;
+    margin-bottom: 30px;
+    border: 3px solid #0a0;
+    position: relative;
+    z-index: 10;
+}
+
+
+.title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.title h1 {
+    font-size: 50px;
+    color: #0f0;
+    margin-bottom: 15px;
+    text-shadow: 4px 4px 0 #090;
+}
+
+.title h2 {
+    font-size: 24px;
+    color: #0a0;
+    margin-bottom: 10px;
+}
+
+.title h3 {
+    font-size: 20px;
+    color: #0a0;
+    margin-bottom: 10px;
+}
+
+
+.divider {
+    height: 3px;
+    background: linear-gradient(to right, transparent, #0f0, transparent);
+    margin: 30px 0;
+}
+
+
+.content {
+    margin-bottom: 25px;
+}
+
+.content p {
+    margin-bottom: 20px;
+    color: #0a0;
+    font-size: 30px;
+}
+
+
+.content-text {
+    margin-top: 20px;
+}
+
+.content-text p {
+    margin-bottom: 25px;
+    text-align: justify;
+    line-height: 1;
+    font-size: 25px;
+    letter-spacing: -1.1px;
+}
+
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.nav-btn {
+    flex: 1;
+    text-align: center;
+    padding: 15px 25px;
+    background-color: #000;
+    color: #0f0;
+    border: 3px solid #0f0;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+    text-decoration: none;
+    font-family: 'Press Start 2P', cursive;
+    position: relative;
+    z-index: 10;
+    box-shadow: 5px 5px 0 #090;
+}
+
+.nav-btn:hover {
+    background-color: #0f0;
+    color: #000;
+    box-shadow: 3px 3px 0 #090;
+    transform: translate(2px, 2px);
+}
+
+.nav-btn.prev {
+    margin-right: left;
+}
+
+.nav-btn.next {
+    margin-left: right;
+}
+
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.blink {
+    animation: blink 1s infinite;
+}
+
+
+@media (max-width: 768px) {
+    .content-box {
+        padding: 25px;
+    }
+
+    .title h1 {
+        font-size: 24px;
+    }
+
+    .title h2 {
+        font-size: 18px;
+    }
+
+    .title h3 {
+        font-size: 16px;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+
+    .content-text p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .nav-btn {
+        font-size: 14px;
+        padding: 12px 20px;
+    }
+
+    .alien {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .navigation {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .content-box {
+        padding: 20px;
+    }
+
+    .content-text p {
+        font-size: 11px;
+    }
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.article-btn {
+    display: block;
+    padding: 15px;
+    background-color: #000;
+    color: #0f0;
+    border: 2px solid #0f0;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+    transition: all 0.3s;
+    box-shadow: 4px 4px 0 #090;
+}
+
+.article-btn:hover {
+    background-color: #0f0;
+    color: #000;
+    box-shadow: 2px 2px 0 #090;
+    transform: translate(2px, 2px);
+}

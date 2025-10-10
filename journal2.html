@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journals</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="scanline"></div>
+    <div class="container">
+
+        <div class="pixel-corner top-left"></div>
+        <div class="pixel-corner top-right"></div>
+        <div class="pixel-corner bottom-left"></div>
+        <div class="pixel-corner bottom-right"></div>
+
+
+        <div class="alien alien-1"></div>
+        <div class="alien alien-2"></div>
+        <div class="alien alien-3"></div>
+
+        <div class="content-box">
+            <div class="title">
+                <h1>Journal #2</h1>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="content">
+                <p><strong>September 22th</strong></p>
+
+
+                <div class="content-text">
+                    <p>The focus of this week's course was the Python runtime environment. When running Python, you may
+                        encounter issues such
+                        as version updates, which can cause problems in the running environment. Therefore, environment
+                        management is necessary.
+                        We use Conda as the environment management tool. At the same time, we also use the command line
+                        "pip install xxx" to install
+                        the required libraries.
+
+                        In addition, we went over the dict type in Python in detail. This type can nest multiple types.
+                        For example, the key can
+                        be a string and the value can be a list, like: shopping = {'vegetables': ['a', 'b', 'c']}. It
+                        can also have a key whose value is another key-value pair, for example:
+                        shopping_2 = {'vegetables': {'green': ['a', 'b', 'c'], 'orange': ['e', 'f', 'g']}}. When you
+                        want to access a specific piece of data, you need to use the correct order of indexing, for
+                        example: print(shopping_2['vegetables']['green'][1])
+                        This week's assignment is related to accessing APIs, and it involves the requests library. The
+                        API provides information
+                        about local weather conditions. When you use get to retrieve data, it returns a collection of
+                        data that includes lists
+                        and dictionaries. You need to use indices to locate the data you need, then access the
+                        corresponding keys (using
+                        x.keys()), and finally iterate to get the values, for example:for value in datakey:
+                        print(weather[value])
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="journal1.html" class="nav-btn prev">◀ Previous</a>
+            <a href="index.html" class="nav-btn prev">Home</a>
+            <a href="journal3.html" class="nav-btn next">Next ▶</a>
+        </div>
+    </div>
+</body>
+
+</html>
