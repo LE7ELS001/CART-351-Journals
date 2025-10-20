@@ -39,6 +39,7 @@
                         The main topics included template inheritance, receiving user input, extracting and processing
                         the input data, and
                         returning the processed content to the template.
+                    </p>
                     <h2>Template inheritance</h2>
                     <p>
                         In the process of creating web pages with HTML, we often need to copy and paste a lot of
@@ -51,8 +52,57 @@
                         Therefore, we introduced the concept of template inheritance, which allows us to reuse a base
                         template and modify only
                         the specific content that needs to be displayed according to our requirements.
+
+                    <pre>
+                            <code>
+                                the Jinja syntax for template inheritance:
+
+                                {% extends "base.html" %}
+
+                                {% block content %}
+
+                                the for loop function in Jinja:
+
+                                {% for item in item_list %}
+                                    &ltp&gt{{ item }}&lt/p&gt
+                                {% endfor %}
+
+                                the if statement function in Jinja: 
+
+                                {% if condition %}
+                                    &ltp&gtCondition is true.&lt/p&gt
+                                {% else %}
+                                    &ltp&gtCondition is false.&lt/p&gt
+                                {% endif %}
+                            </code>
+                        </pre>
+
+                    <h2 style="padding-top: 80px;">Receiving and transfering input data</h2>
+                    <pre>
+                            <code>
+                                Jinja 
+
+                                &ltform class="card form-card" action="{{ url_for('thank_you_t2') }}" method="get"&gt&lt/form&gt
+
+                            </code>
+                    </pre>
+
+                    <p style="margin: 40px;"></p>
+                    <code>action="{{ url_for('thank_you_t2') }}"</code>
+                    <p>This means that when the user clicks “Submit”, the browser sends an HTTP request to the Flask
+                        route named
+                        thank_you_t2.</p>
+                    <code>method="get"</code>
+                    <p>
+                        This specifies that the form will be submitted using the GET method.
                     </p>
-                    </p>
+
+
+                    <p>In .py file, you can use function <code> request.args.get("specific name")</code>to get the
+                        value. After processing the data you receive, you can use the method we learned last week to
+                        pass the processed data back to a
+                        reserved variable in the HTML template, so that the page can display the processed result based
+                        on the user's input.</p>
 
 
                 </div>
@@ -60,9 +110,9 @@
         </div>
 
         <div class="navigation">
-            <a href="#" class="nav-btn prev"></a>
+            <a href="journal3.html" class="nav-btn prev">◀ Previous</a>
             <a href="index.html" class="nav-btn prev">Home</a>
-            <a href="journal2.html" class="nav-btn next">Next ▶</a>
+            <a href="#" class="nav-btn next">Next ▶</a>
         </div>
     </div>
 </body>
