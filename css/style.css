@@ -353,3 +353,17 @@ code {
     color: #656162;
 
 }
+
+.fake-pre {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: "Courier New", monospace;
+    overflow-x: auto;
+    text-align: center;
+}
+
+.fake-pre img {
+    max-width: 100%;
+    height: auto;
+}
