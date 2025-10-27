@@ -363,7 +363,7 @@ code {
     text-align: center;
 }
 
-.fake-pre img {
+.fake-pre center-img {
     max-width: 100%;
     height: auto;
 }

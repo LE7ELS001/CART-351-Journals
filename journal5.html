@@ -36,18 +36,73 @@
                 <div class="content-text">
                     <p>This week, we continued learning about Flask, focusing mainly on Session and GET/POST methods.
 
-                    <h3>Session:</h3>
+                    <h2>Session:</h2>
                     <p>
                         From my understanding, a session is used to store a small amount of user information as an
                         identifier, allowing the
                         website to recognize whether the user is visiting for the first time.
                         The basic code implementation is as follows:
-                    <pre>
-                            <div class="fake-pre">
-                                <img src="" alt="" class="center-img">
-                            </div>
-                        </pre>
+
+                    <div class="fake-pre">
+                        <h4>inputSessionData.html</h4>
+                        <img src="static/images/Journal5_1.png" alt="" class="center-img">
+                        </p>
+                        </p>
+                        <h4>main.py</h4>
+                        <img src="static/images/Journal5_2.png" alt="" class="center-img">
+                        <img src="static/images/Journal5_4.png" alt="" class="center-img">
+                        <p>
+                        </p>
+                        <h4>inputSessionData.html</h4>
+                        <img src="static/images/Journal5_3.png" alt="" class="center-img">
+                    </div>
+                    <code>
+                            <p>
+                                The specific execution process of the above code is as follows:
+                                On the web page (inputSessionData.html), the user inputs information, which is then transmitted to the backend (main.py) through the GET
+                                method.
+                                The backend can either simply record the information or process it further — such as modifying or extracting the data as
+                                needed — and finally return the result to the web page via a return statement for display.
+                            </p>
+                        </code>
+
                     </p>
+                    </p>
+
+                    <h2>GET/POST:</h2>
+                    <P>
+                        GET and POST are two commonly used request methods, both serving as data transmission mechanisms
+                        between the client and
+                        the server.
+                        When we perform a web search, the URL often contains a suffix like search?q=your_search_term,
+                        which is an example of the
+                        GET method.
+                        However, this approach may expose sensitive information in the URL.
+                        Therefore, the POST method is generally used as a more secure alternative.
+                    </P>
+                    <div class="fake-pre">
+                        <h4>js file(GET)</h4>
+                        <img src="static/images/Journal5_5.png" alt="" class="center-img">
+                        </p>
+                        </p>
+                        <h4>main.py(GET)</h4>
+                        <img src="static/images/Journal5_5_1.png" alt="" class="center-img">
+                        <P style="text-align: center;">Use request.args['XXX']</P>
+                        <p style="text-align: center;">-------------------------------</p>
+
+                        <h4>js file(POST)</h4>
+                        <img src="static/images/Journal5_6.png" alt="" class="center-img">
+                        <h4>main.py(POST)</h4>
+                        <img src="static/images/Journal5_6_1.png" alt="" class="center-img">
+                        <P style="text-align: center;">Use request.form.get['xxx'] to get text data </P>
+                        <P style="text-align: center;">Use request.file.get['xxx'] to get images data </P>
+                    </div>
+                    <p>
+                        It is important to note that the transmission method needs to be specified both in the
+                        JavaScript file and in main.py;
+                        by default, it is GET.
+                        In the JavaScript file, the fetch function is not only used to receive responses, but also to
+                        send requests.
                     </p>
 
 
