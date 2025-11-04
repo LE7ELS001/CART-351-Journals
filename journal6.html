@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journals</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="scanline"></div>
+    <div class="container">
+
+        <div class="pixel-corner top-left"></div>
+        <div class="pixel-corner top-right"></div>
+        <div class="pixel-corner bottom-left"></div>
+        <div class="pixel-corner bottom-right"></div>
+
+
+        <div class="alien alien-1"></div>
+        <div class="alien alien-2"></div>
+        <div class="alien alien-3"></div>
+
+        <div class="content-box">
+            <div class="title">
+                <h1>Journal #6</h1>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="content">
+                <p><strong>November 3</strong></p>
+
+
+                <div class="content-text">
+
+                    <h2>Reading/ writing txt and json files</h2>
+                    <p>
+                        The first thing was a foundational review of how Python interacts with files. The key takeaways
+                        were:
+
+
+
+                    <pre>
+                            <code>
+        File Modes:
+
+                    'r' (Read): For reading from a file.
+
+                    'w' (Write): For writing to a file. This mode overwrites any existing content.
+
+                    'a' (Append): For adding new content to the end of a file without destroying existing data.
+                            </code>
+                        </pre>
+
+
+                    <pre>
+                        <code>
+
+        Reading Methods: 
+                        using .read(), 
+                              .readline(),
+                              .readlines() 
+                              to consume file content in different ways, and
+                              used .seek(0) to reset the file pointer.
+                        </code>
+                    </pre>
+
+                    <h2>JSON vs. Text.</h2>
+                    The most important distinction was between:
+
+                    <code>json.dump(data, file_object):</code> Serializes a Python object and writes it to a file.
+
+                    <code>json.load(file_object):</code> Reads from a file and de-serializes JSON into a Python object.
+
+                    <code>json.dumps(data):</code> Serializes a Python object into a JSON-formatted string.
+
+                    <code>json.loads(string_data):</code> De-serializes a JSON-formatted string into a Python object.
+
+                    The most critical concept from this script was the "Read-Modify-Rewrite" pattern for updating
+                    JSON files. Unlike a
+                    simple text log where you can just append, a structured JSON file (like a list) must be read
+                    entirely into memory,
+                    modified as a Python object, and then written back to the file completely, overwriting the
+                    original.
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="journal5.html" class="nav-btn prev">◀ Previous</a>
+            <a href="index.html" class="nav-btn prev">Home</a>
+            <a href="#" class="nav-btn next">Next ▶</a>
+        </div>
+    </div>
+</body>
+
+</html>
