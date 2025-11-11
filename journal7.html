@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journals</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="scanline"></div>
+    <div class="container">
+
+        <div class="pixel-corner top-left"></div>
+        <div class="pixel-corner top-right"></div>
+        <div class="pixel-corner bottom-left"></div>
+        <div class="pixel-corner bottom-right"></div>
+
+
+        <div class="alien alien-1"></div>
+        <div class="alien alien-2"></div>
+        <div class="alien alien-3"></div>
+
+        <div class="content-box">
+            <div class="title">
+                <h1>Journal #7</h1>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="content">
+                <p><strong>November 10</strong></p>
+
+
+                <div class="content-text">
+                    <h2> Connecting Flask with MongoDB Atlas </h2>
+                    In today's class, I learned how to integrate a Flask web application with a MongoDB Atlas cloud
+                    database. This lesson
+                    helped me understand how backend web frameworks interact with cloud-hosted databases, as well as the
+                    importance of
+                    security and structured data design. MongoDB, being a NoSQL database, stores data in flexible
+                    JSON-like documents, which
+                    makes it ideal for dynamic web applications. Using MongoDB Atlas's free cloud service allows us to
+                    connect from anywhere
+                    without worrying about local setup or IP issues.
+
+                    <h2 style="padding-top: 15px;">Database Setup</h2>
+                    We started by creating a MongoDB Atlas account, setting up a database called CART351 with a
+                    collection named plantRepo,
+                    and configuring network access. Then, we connected it to Flask using the Flask-PyMongo library. To
+                    protect credentials
+                    like usernames and passwords, we created a .env file and loaded variables securely using the
+                    python-dotenv package.
+
+                    <h2 style="padding-top: 15px;">Database Operations</h2>
+                    Once the connection worked, we tested CRUD operations. I learned how to insert documents with
+                    insert_one() and
+                    insert_many(), retrieve them using find() and find_one(), and update data through operators like
+                    $set and $inc. We also
+                    used comparison and logical operators such as $gt, $and, and $or to filter results, and added
+                    sorting and limiting
+                    options to control query output. Later, we converted date strings into datetime objects to perform
+                    time-based queries
+
+                    <h2 style="padding-top: 15px;">Frontend and Backend Integration</h2>
+                    Finally, we linked the backend to the frontend using HTML templates, CSS styling, and JavaScript's
+                    Fetch API. This
+                    allowed users to submit plant information and upload images dynamically to the database. It
+                    demonstrated how all parts
+                    of a full-stack system connect seamlessly.
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="journal6.html" class="nav-btn prev">◀ Previous</a>
+            <a href="index.html" class="nav-btn prev">Home</a>
+            <a href="#" class="nav-btn next">Next ▶</a>
+        </div>
+    </div>
+</body>
+
+</html>
