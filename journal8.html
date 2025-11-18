@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journals</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="scanline"></div>
+    <div class="container">
+
+        <div class="pixel-corner top-left"></div>
+        <div class="pixel-corner top-right"></div>
+        <div class="pixel-corner bottom-left"></div>
+        <div class="pixel-corner bottom-right"></div>
+
+
+        <div class="alien alien-1"></div>
+        <div class="alien alien-2"></div>
+        <div class="alien alien-3"></div>
+
+        <div class="content-box">
+            <div class="title">
+                <h1>Journal #8</h1>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="content">
+                <p><strong>November 17</strong></p>
+
+
+                <div class="content-text">
+                    <h2> WebSocket </h2>
+                    Today's learning focused on understanding the fundamentals of WebSocket communication and
+                    implementing it in a Flask
+                    environment, followed by integrating real-time socket data with P5.js to create a collaborative
+                    visual experience.
+                    Through this process, I gained a clearer and more practical understanding of real-time,
+                    bi-directional communication
+                    between a client and a server.
+
+                    First, I learned the key feature of WebSockets: they allow a persistent, two-way connection without
+                    relying on repeated
+                    HTTP polling, making data exchange more efficient. Using Flask-SocketIO, I set up a server capable
+                    of receiving events
+                    from clients and broadcasting messages. I also learned how to implement the initial communication
+                    handshake (join /
+                    join-complete) and text message broadcast functionality.
+
+                    Next, we extended this communication model to a P5.js interactive canvas. Each user could click to
+                    generate a unique
+                    Flower object with random colors and animated scaling behavior. These visual objects were then
+                    transmitted through the
+                    WebSocket and displayed on other connected clients' canvases, enabling a simple form of real-time
+                    collaborative
+                    visualization.
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="journal7.html" class="nav-btn prev">◀ Previous</a>
+            <a href="index.html" class="nav-btn prev">Home</a>
+            <a href="#" class="nav-btn next">Next ▶</a>
+        </div>
+    </div>
+</body>
+
+</html>
