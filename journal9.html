@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journals</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="scanline"></div>
+    <div class="container">
+
+        <div class="pixel-corner top-left"></div>
+        <div class="pixel-corner top-right"></div>
+        <div class="pixel-corner bottom-left"></div>
+        <div class="pixel-corner bottom-right"></div>
+
+
+        <div class="alien alien-1"></div>
+        <div class="alien alien-2"></div>
+        <div class="alien alien-3"></div>
+
+        <div class="content-box">
+            <div class="title">
+                <h1>Journal #9</h1>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="content">
+                <p><strong>November 24</strong></p>
+
+
+                <div class="content-text">
+                    <h2> EX-5 </h2>
+                    This week, I and my teammate worked on integrating a MongoDB Atlas database with Flask and using the
+                    stored data to generate different
+                    visual patterns in the browser. The first step was setting up the database connection using
+                    environment variables and replacing the URI in server.py.
+                    This part helped reinforce how Flask interacts with MongoDB using flask_pymongo.
+                    Next, we implemented the required MongoDB queries using operators like .find(), .sort(), and $in.
+                    While writing them, I
+                    became more familiar with how MongoDB handles filtering and sorting. Writing these queries helped me
+                    understand how to
+                    structure data retrieval more efficiently.
+                    The final part was visualization. Using JavaScript, we received the JSON data through fetch() and
+                    created custom display
+                    functions depending on which query was selected. During this step, I learned how to work with
+                    asynchronous data and how to update the DOM dynamically after the response
+                    arrived. I also got more familiar with separating logic: the server only handled querying, while the
+                    client handled
+                    layout and rendering. Overall, this part clarified how front-end rendering can respond dynamically
+                    to database results rather than fixed
+                    content.
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="journal8.html" class="nav-btn prev">◀ Previous</a>
+            <a href="index.html" class="nav-btn prev">Home</a>
+            <a href="journal10.html" class="nav-btn next">Next ▶</a>
+        </div>
+    </div>
+</body>
+
+</html>
