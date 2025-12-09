@@ -42,14 +42,14 @@
                         note that the for loop in Python follows the format: <code>for i in range(number)</code>.
                         And the syntax for the if is like: <code> if x < y : </code>. For the print funtion, it is like
                     <pre><code>
-                        name = "abc" 
-                        print(f"My name is {name}")
-                        </code></pre>
+name = "abc" 
+print(f"My name is {name}")
+</code></pre>
                     </p>
 
                     <p> In class, we also mentioned an important type called dictionary, which can have a format like
                         <code>{"name": "I", "number":
-                        "514-xxx-xxxx"}</code>, where name and number are keys, and I and 514-xxx-xxxx are their
+"514-xxx-xxxx"}</code>, where name and number are keys, and I and 514-xxx-xxxx are their
                         corresponding
                         values. Each key corresponds to one value. At the current stage, Python runs
                         in the terminal, rather than running in a browser like Java when
@@ -87,14 +87,14 @@
                         be a string and the value can be a list,
                         like:<code>shopping = {'vegetables': ['a', 'b', 'c']}</code>. It
                         can also have a key whose value is another key-value pair, for example:<code>
-                                shopping_2 = {'vegetables': {'green': ['a', 'b', 'c'], 'orange': ['e', 'f', 'g']}}</code>.
+shopping_2 = {'vegetables': {'green': ['a', 'b', 'c'], 'orange': ['e', 'f', 'g']}}</code>.
                         When you
                         want to access a specific piece of data, you need to use the correct order of indexing, for
                         example:
                     <pre><code>
-                        shopping_2 = {'vegetables': {'green': ['a', 'b', 'c'], 'orange': ['e', 'f', 'g']}}
-                        print(shopping_2['vegetables']['green'][1])
-                                </code></pre>
+shopping_2 = {'vegetables': {'green': ['a', 'b', 'c'], 'orange': ['e', 'f', 'g']}}
+print(shopping_2['vegetables']['green'][1])
+</code></pre>
                     </p>
                     <p> This week's assignment is related to accessing APIs, and it involves the requests library. The
                         API provides information
@@ -102,19 +102,19 @@
                         data that includes lists
                         and dictionaries. You need to use indices to locate the data you need, then access the
                         corresponding keys <code> (use
-                                x.keys())</code>, and finally iterate to get the values, for example:
+x.keys())</code>, and finally iterate to get the values, for example:
                     <pre>
-                                    <code>
-                                        response = requests.get(url)
-                                        data = response.json()
-        
-                                        weather = data['weather'][0]
-                                        dataKey = weather.keys()
-        
-                                        for value in dataKey:
-                                            print(weather[value])
-                                    </code>
-                                </pre>
+<code>
+response = requests.get(url)
+data = response.json()
+
+weather = data['weather'][0]
+dataKey = weather.keys()
+
+for value in dataKey:
+print(weather[value])
+</code>
+</pre>
                     </p>
 
 
@@ -141,16 +141,16 @@
                         and retrieve data from
                         a database to render on the page. The initial setup of Flask is like this:
                     <pre>
-                                        <code>
-                                            from flask import Flask
-            
-                                            app = Flask(__name__)
-            
-                                            @app.route('/')
-                                            def index():
-                                                return "Hello, World!"
-                                        </code>
-                                    </pre>
+<code>
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+return "Hello, World!"
+</code>
+</pre>
                     </p>
                     <p>
                         In Flask, the code <code>app = Flask(__name__)</code> means that we are turning the current
@@ -168,16 +168,16 @@
                         return a html file.
                         The code now change to:
                     <pre>
-                                        <code>
-                                            from flask import Flask, render_template
-            
-                                            app = Flask(__name__)
-            
-                                            @app.route('/')
-                                            def index():
-                                                return render_template("index.html")
-                                        </code>
-                                    </pre>
+<code>
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+return render_template("index.html")
+</code>
+</pre>
                     </p>
                     <p>
                         This allows us to use Flask to serve the corresponding HTML page and display it in the
@@ -185,27 +185,27 @@
                         And We also able to change the content in the html file by using Jinja2 syntax. For
                         instance:
                     <pre>
-                                        <code>
-                                            Index.html
-            
-                                            &ltbody&gt
-                                                &ltp&gt The answer is {{ answer }} &lt/p&gt
-                                            &lt/body&gt
-                                        </code>
-                                    </pre>
+<code>
+Index.html
+
+&ltbody&gt
+&ltp&gt The answer is {{ answer }} &lt/p&gt
+&lt/body&gt
+</code>
+</pre>
                     </p>
 
                     <p>
                     <pre>
-                                        <code>
-                                            main.py 
-            
-                                            @app.route('/')
-                                            def index():
-                                                answer = "Yes"
-                                                return render_template("index.html", answer=answer)
-                                        </code>
-                                    </pre>
+<code>
+main.py 
+
+@app.route('/')
+def index():
+answer = "Yes"
+return render_template("index.html", answer=answer)
+</code>
+</pre>
                     </p>
                     <p>
                         Then the browser will display “The answer is Yes.”
@@ -250,38 +250,38 @@
                         the specific content that needs to be displayed according to our requirements.
 
                     <pre>
-                                    <code>
-                                        the Jinja syntax for template inheritance:
-        
-                                        {% extends "base.html" %}
-        
-                                        {% block content %}
-        
-                                        the for loop function in Jinja:
-        
-                                        {% for item in item_list %}
-                                            &ltp&gt{{ item }}&lt/p&gt
-                                        {% endfor %}
-        
-                                        the if statement function in Jinja: 
-        
-                                        {% if condition %}
-                                            &ltp&gtCondition is true.&lt/p&gt
-                                        {% else %}
-                                            &ltp&gtCondition is false.&lt/p&gt
-                                        {% endif %}
-                                    </code>
-                                </pre>
+<code>
+the Jinja syntax for template inheritance:
+
+{% extends "base.html" %}
+
+{% block content %}
+
+the for loop function in Jinja:
+
+{% for item in item_list %}
+&ltp&gt{{ item }}&lt/p&gt
+{% endfor %}
+
+the if statement function in Jinja: 
+
+{% if condition %}
+&ltp&gtCondition is true.&lt/p&gt
+{% else %}
+&ltp&gtCondition is false.&lt/p&gt
+{% endif %}
+</code>
+</pre>
 
                     <h2 style="padding-top: 80px;">Receiving and transfering input data</h2>
                     <pre>
-                                    <code>
-                                        Jinja 
-        
-                                        &ltform class="card form-card" action="{{ url_for('thank_you_t2') }}" method="get"&gt&lt/form&gt
-        
-                                    </code>
-                            </pre>
+<code>
+Jinja 
+
+&ltform class="card form-card" action="{{ url_for('thank_you_t2') }}" method="get"&gt&lt/form&gt
+
+</code>
+</pre>
 
                     <p style="margin: 40px;"></p>
                     <code>action="{{ url_for('thank_you_t2') }}"</code>
@@ -299,6 +299,351 @@
                         pass the processed data back to a
                         reserved variable in the HTML template, so that the page can display the processed result based
                         on the user's input.</p>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="content-box">
+            <div class="title">
+                <h1>Journal #5</h1>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="content">
+                <p><strong>Week 5:October 27th</strong></p>
+
+
+                <div class="content-text">
+                    <p>This week, we continued learning about Flask, focusing mainly on Session and GET/POST methods.
+
+                    <h2>Session:</h2>
+                    <p>
+                        From my understanding, a session is used to store a small amount of user information as an
+                        identifier, allowing the
+                        website to recognize whether the user is visiting for the first time.
+                        The basic code implementation is as follows:
+
+                    <div class="fake-pre">
+                        <h4>inputSessionData.html</h4>
+                        <img src="static/images/Journal5_1.png" alt="" class="center-img">
+                        </p>
+                        </p>
+                        <h4>main.py</h4>
+                        <img src="static/images/Journal5_2.png" alt="" class="center-img">
+                        <img src="static/images/Journal5_4.png" alt="" class="center-img">
+                        <p>
+                        </p>
+                        <h4>inputSessionData.html</h4>
+                        <img src="static/images/Journal5_3.png" alt="" class="center-img">
+                    </div>
+                    <code>
+<p>
+The specific execution process of the above code is as follows:
+On the web page (inputSessionData.html), the user inputs information, which is then transmitted to the backend (main.py) through the GET
+method.
+The backend can either simply record the information or process it further — such as modifying or extracting the data as
+needed — and finally return the result to the web page via a return statement for display.
+</p>
+</code>
+
+                    </p>
+                    </p>
+
+                    <h2>GET/POST:</h2>
+                    <P>
+                        GET and POST are two commonly used request methods, both serving as data transmission mechanisms
+                        between the client and
+                        the server.
+                        When we perform a web search, the URL often contains a suffix like search?q=your_search_term,
+                        which is an example of the
+                        GET method.
+                        However, this approach may expose sensitive information in the URL.
+                        Therefore, the POST method is generally used as a more secure alternative.
+                    </P>
+                    <div class="fake-pre">
+                        <h4>js file(GET)</h4>
+                        <img src="static/images/Journal5_5.png" alt="" class="center-img">
+                        </p>
+                        </p>
+                        <h4>main.py(GET)</h4>
+                        <img src="static/images/Journal5_5_1.png" alt="" class="center-img">
+                        <P style="text-align: center;">Use request.args['XXX']</P>
+                        <p style="text-align: center;">-------------------------------</p>
+
+                        <h4>js file(POST)</h4>
+                        <img src="static/images/Journal5_6.png" alt="" class="center-img">
+                        <h4>main.py(POST)</h4>
+                        <img src="static/images/Journal5_6_1.png" alt="" class="center-img">
+                        <P style="text-align: center;">Use request.form.get['xxx'] to get text data </P>
+                        <P style="text-align: center;">Use request.file.get['xxx'] to get images data </P>
+                    </div>
+                    <p>
+                        It is important to note that the transmission method needs to be specified both in the
+                        JavaScript file and in main.py;
+                        by default, it is GET.
+                        In the JavaScript file, the fetch function is not only used to receive responses, but also to
+                        send requests.
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="content-box">
+            <div class="title">
+                <h1>Journal #6</h1>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="content">
+                <p><strong>Week 6:November 3</strong></p>
+
+
+                <div class="content-text">
+
+                    <h2>Reading/ writing txt and json files</h2>
+                    <p>
+                        The first thing was a foundational review of how Python interacts with files. The key takeaways
+                        were:
+
+
+
+                    <pre>
+<code>
+File Modes:
+
+'r' (Read): For reading from a file.
+
+'w' (Write): For writing to a file. This mode overwrites any existing content.
+
+'a' (Append): For adding new content to the end of a file without destroying existing data.
+</code>
+</pre>
+
+
+                    <pre>
+<code>
+
+Reading Methods: 
+using .read(), 
+.readline(),
+.readlines() 
+to consume file content in different ways, and
+used .seek(0) to reset the file pointer.
+</code>
+</pre>
+
+                    <h2>JSON vs. Text.</h2>
+                    The most important distinction was between:
+
+                    <code>json.dump(data, file_object):</code> Serializes a Python object and writes it to a file.
+
+                    <code>json.load(file_object):</code> Reads from a file and de-serializes JSON into a Python object.
+
+                    <code>json.dumps(data):</code> Serializes a Python object into a JSON-formatted string.
+
+                    <code>json.loads(string_data):</code> De-serializes a JSON-formatted string into a Python object.
+
+                    The most critical concept from this script was the "Read-Modify-Rewrite" pattern for updating
+                    JSON files. Unlike a
+                    simple text log where you can just append, a structured JSON file (like a list) must be read
+                    entirely into memory,
+                    modified as a Python object, and then written back to the file completely, overwriting the
+                    original.
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="content-box">
+            <div class="title">
+                <h1>Journal #7</h1>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="content">
+                <p><strong>Week 7: November 10</strong></p>
+
+
+                <div class="content-text">
+                    <h2> Connecting Flask with MongoDB Atlas </h2>
+                    In today's class, I learned how to integrate a Flask web application with a MongoDB Atlas cloud
+                    database. This lesson
+                    helped me understand how backend web frameworks interact with cloud-hosted databases, as well as the
+                    importance of
+                    security and structured data design. MongoDB, being a NoSQL database, stores data in flexible
+                    JSON-like documents, which
+                    makes it ideal for dynamic web applications. Using MongoDB Atlas's free cloud service allows us to
+                    connect from anywhere
+                    without worrying about local setup or IP issues.
+
+                    <h2 style="padding-top: 15px;">Database Setup</h2>
+                    We started by creating a MongoDB Atlas account, setting up a database called CART351 with a
+                    collection named plantRepo,
+                    and configuring network access. Then, we connected it to Flask using the Flask-PyMongo library. To
+                    protect credentials
+                    like usernames and passwords, we created a .env file and loaded variables securely using the
+                    python-dotenv package.
+
+                    <h2 style="padding-top: 15px;">Database Operations</h2>
+                    Once the connection worked, we tested CRUD operations. I learned how to insert documents with
+                    insert_one() and
+                    insert_many(), retrieve them using find() and find_one(), and update data through operators like
+                    $set and $inc. We also
+                    used comparison and logical operators such as $gt, $and, and $or to filter results, and added
+                    sorting and limiting
+                    options to control query output. Later, we converted date strings into datetime objects to perform
+                    time-based queries
+
+                    <h2 style="padding-top: 15px;">Frontend and Backend Integration</h2>
+                    Finally, we linked the backend to the frontend using HTML templates, CSS styling, and JavaScript's
+                    Fetch API. This
+                    allowed users to submit plant information and upload images dynamically to the database. It
+                    demonstrated how all parts
+                    of a full-stack system connect seamlessly.
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="content-box">
+            <div class="title">
+                <h1>Journal #8</h1>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="content">
+                <p><strong>Week 8:November 17</strong></p>
+
+
+                <div class="content-text">
+                    <h2> WebSocket </h2>
+                    Today's learning focused on understanding the fundamentals of WebSocket communication and
+                    implementing it in a Flask
+                    environment, followed by integrating real-time socket data with P5.js to create a collaborative
+                    visual experience.
+                    Through this process, I gained a clearer and more practical understanding of real-time,
+                    bi-directional communication
+                    between a client and a server.
+
+                    First, I learned the key feature of WebSockets: they allow a persistent, two-way connection without
+                    relying on repeated
+                    HTTP polling, making data exchange more efficient. Using Flask-SocketIO, I set up a server capable
+                    of receiving events
+                    from clients and broadcasting messages. I also learned how to implement the initial communication
+                    handshake (join /
+                    join-complete) and text message broadcast functionality.
+
+                    Next, we extended this communication model to a P5.js interactive canvas. Each user could click to
+                    generate a unique
+                    Flower object with random colors and animated scaling behavior. These visual objects were then
+                    transmitted through the
+                    WebSocket and displayed on other connected clients' canvases, enabling a simple form of real-time
+                    collaborative
+                    visualization.
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="content-box">
+            <div class="title">
+                <h1>Journal #9</h1>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="content">
+                <p><strong>Week 9: November 24</strong></p>
+
+
+                <div class="content-text">
+                    <h2> EX-5 </h2>
+                    This week, I and my teammate worked on integrating a MongoDB Atlas database with Flask and using the
+                    stored data to generate different
+                    visual patterns in the browser. The first step was setting up the database connection using
+                    environment variables and replacing the URI in server.py.
+                    This part helped reinforce how Flask interacts with MongoDB using flask_pymongo.
+                    Next, we implemented the required MongoDB queries using operators like .find(), .sort(), and $in.
+                    While writing them, I
+                    became more familiar with how MongoDB handles filtering and sorting. Writing these queries helped me
+                    understand how to
+                    structure data retrieval more efficiently.
+                    The final part was visualization. Using JavaScript, we received the JSON data through fetch() and
+                    created custom display
+                    functions depending on which query was selected. During this step, I learned how to work with
+                    asynchronous data and how to update the DOM dynamically after the response
+                    arrived. I also got more familiar with separating logic: the server only handled querying, while the
+                    client handled
+                    layout and rendering. Overall, this part clarified how front-end rendering can respond dynamically
+                    to database results rather than fixed
+                    content.
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="content-box">
+            <div class="title">
+                <h1>Journal #10</h1>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="content">
+                <p><strong>Week 10: December 5</strong></p>
+
+
+                <div class="content-text">
+                    <h2> PROJECT III</h2>
+                    This week, my teammate Tianshun and I began working on Project 3, where we decided to create a
+                    multiplayer online
+                    fighting game.
+
+                    During development, we learned more about the workflow behind real-time networked games. Unlike
+                    building a single-player
+                    game, every new feature on the front end requires us to consider whether the change needs to be
+                    synchronized to the
+                    backend and how that synchronization should happen. Instead of completing the front end first,
+                    development becomes a
+                    constant back-and-forth between client logic and server communication.
+
+                    I also gained a better understanding of networking behavior in multiplayer systems. One memorable
+                    example was the logic
+                    for handling player join events. We discovered a bug where Player 1 could see Player 2, but Player 2
+                    could not see
+                    Player 1. After debugging, we realized the issue occurred because Player 1 broadcasted their join
+                    message before Player
+                    2 existed, so Player 2 never received it. The fix was to allow late-joining players to request the
+                    current player list
+                    instead of relying solely on broadcast events. This experience helped me understand that matchmaking
+                    and synchronization
+                    in programming require multiple steps rather than a single action.
+
+                    Another takeaway was gaining a clearer understanding of the separation between frontend and backend
+                    responsibilities.
+                    For example, the shared timer must run on the server to ensure both players remain synchronized,
+                    while local mechanics
+                    like collision detection can run on the client and simply send the result back to the server.
+
+                    Overall, this project helped me better understand the practical use of WebSockets, Socket.IO, and
+                    MongoDB, and it gave
+                    me a clearer sense of how multiplayer development differs fundamentally from single-player game
+                    development.
+
 
 
                 </div>
