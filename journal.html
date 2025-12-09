@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journals</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="scanline"></div>
+    <div class="container">
+
+        <div class="pixel-corner top-left"></div>
+        <div class="pixel-corner top-right"></div>
+        <div class="pixel-corner bottom-left"></div>
+        <div class="pixel-corner bottom-right"></div>
+
+
+        <div class="alien alien-1"></div>
+        <div class="alien alien-2"></div>
+        <div class="alien alien-3"></div>
+
+        <div class="content-box">
+            <div class="title">
+                <h1>Journal #1</h1>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="content">
+                <p><strong>Week 1: September 15th</strong></p>
+                <div class="content-text">
+                    <p>This week we learned a new programming language - Python.
+                        Unlike the Java language we learned before, many of Python's syntax expressions are different.
+                        In Python, it is not necessary to define the variable type before each variable, and curly
+                        braces
+                        <code>{ }</code> are not used in function like if, while loop and for loop and instead, we use
+                        colon <code> : </code> instead.It
+                        is important to
+                        note that the for loop in Python follows the format: <code>for i in range(number)</code>.
+                        And the syntax for the if is like: <code> if x < y : </code>. For the print funtion, it is like
+                    <pre><code>
+                        name = "abc" 
+                        print(f"My name is {name}")
+                        </code></pre>
+                    </p>
+
+                    <p> In class, we also mentioned an important type called dictionary, which can have a format like
+                        <code>{"name": "I", "number":
+                        "514-xxx-xxxx"}</code>, where name and number are keys, and I and 514-xxx-xxxx are their
+                        corresponding
+                        values. Each key corresponds to one value. At the current stage, Python runs
+                        in the terminal, rather than running in a browser like Java when
+                        creating HTML.
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="content-box">
+            <div class="title">
+                <h1>Journal #2</h1>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="content">
+                <p><strong>Week 2: September 22th</strong></p>
+
+
+                <div class="content-text">
+                    <p>The focus of this week's course was the Python runtime environment. When running Python, you may
+                        encounter issues such
+                        as version updates, which can cause problems in the running environment. Therefore, environment
+                        management is necessary.
+                        We use <code>Conda</code> as the environment management tool. At the same time, we also use the
+                        command line
+                        <code> pip install xxx </code>to install
+                        the required libraries.
+
+                        In addition, we went over the dict type in Python in detail. This type can nest multiple types.
+                        For example, the key can
+                        be a string and the value can be a list,
+                        like:<code>shopping = {'vegetables': ['a', 'b', 'c']}</code>. It
+                        can also have a key whose value is another key-value pair, for example:<code>
+                                shopping_2 = {'vegetables': {'green': ['a', 'b', 'c'], 'orange': ['e', 'f', 'g']}}</code>.
+                        When you
+                        want to access a specific piece of data, you need to use the correct order of indexing, for
+                        example:
+                    <pre><code>
+                        shopping_2 = {'vegetables': {'green': ['a', 'b', 'c'], 'orange': ['e', 'f', 'g']}}
+                        print(shopping_2['vegetables']['green'][1])
+                                </code></pre>
+                    </p>
+                    <p> This week's assignment is related to accessing APIs, and it involves the requests library. The
+                        API provides information
+                        about local weather conditions. When you use get to retrieve data, it returns a collection of
+                        data that includes lists
+                        and dictionaries. You need to use indices to locate the data you need, then access the
+                        corresponding keys <code> (use
+                                x.keys())</code>, and finally iterate to get the values, for example:
+                    <pre>
+                                    <code>
+                                        response = requests.get(url)
+                                        data = response.json()
+        
+                                        weather = data['weather'][0]
+                                        dataKey = weather.keys()
+        
+                                        for value in dataKey:
+                                            print(weather[value])
+                                    </code>
+                                </pre>
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="content-box">
+            <div class="title">
+                <h1>Journal #3</h1>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="content">
+                <p><strong>Week 3: September 29th</strong></p>
+
+
+                <div class="content-text">
+                    <p>This week, we focused on Flask, a web framework written in Python. Unlike the static approach
+                        of
+                        writing HTML with Java in the past, Flask allows web pages to dynamically display different
+                        results based on user input
+                        and retrieve data from
+                        a database to render on the page. The initial setup of Flask is like this:
+                    <pre>
+                                        <code>
+                                            from flask import Flask
+            
+                                            app = Flask(__name__)
+            
+                                            @app.route('/')
+                                            def index():
+                                                return "Hello, World!"
+                                        </code>
+                                    </pre>
+                    </p>
+                    <p>
+                        In Flask, the code <code>app = Flask(__name__)</code> means that we are turning the current
+                        file
+                        into a web
+                        application, and <code> @app.route('/') def index() return "hello, world"</code>. When a
+                        user
+                        visits http://127.0.0.1:5000/, the contents of the def index() function are automatically
+                        executed, and
+                        whatever it returns is sent to the browser. The return content in def index() not only can
+                        be a
+                        string, but also can be something like
+                        <code>&ltp&gt&lth1&gt This is CART 351&lt/h1&gt &lt/p&gt</code>
+                        However, this is not so convenient for writing complex HTML. Therefore, Flask allows us to
+                        return a html file.
+                        The code now change to:
+                    <pre>
+                                        <code>
+                                            from flask import Flask, render_template
+            
+                                            app = Flask(__name__)
+            
+                                            @app.route('/')
+                                            def index():
+                                                return render_template("index.html")
+                                        </code>
+                                    </pre>
+                    </p>
+                    <p>
+                        This allows us to use Flask to serve the corresponding HTML page and display it in the
+                        browser.
+                        And We also able to change the content in the html file by using Jinja2 syntax. For
+                        instance:
+                    <pre>
+                                        <code>
+                                            Index.html
+            
+                                            &ltbody&gt
+                                                &ltp&gt The answer is {{ answer }} &lt/p&gt
+                                            &lt/body&gt
+                                        </code>
+                                    </pre>
+                    </p>
+
+                    <p>
+                    <pre>
+                                        <code>
+                                            main.py 
+            
+                                            @app.route('/')
+                                            def index():
+                                                answer = "Yes"
+                                                return render_template("index.html", answer=answer)
+                                        </code>
+                                    </pre>
+                    </p>
+                    <p>
+                        Then the browser will display “The answer is Yes.”
+                        The <code>{{ answer }}</code> is the Jinja syntax, and you can pass a value to it in
+                        <code>main.py</code>.
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="content-box">
+            <div class="title">
+                <h1>Journal #4</h1>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="content">
+                <p><strong>Week 4: October 20th</strong></p>
+
+
+                <div class="content-text">
+                    <p>
+                        This week, we continued learning Flask.
+                        The main topics included template inheritance, receiving user input, extracting and processing
+                        the input data, and
+                        returning the processed content to the template.
+                    </p>
+                    <h2>Template inheritance</h2>
+                    <p>
+                        In the process of creating web pages with HTML, we often need to copy and paste a lot of
+                        repeated content, such as the
+                        same parts inside the
+
+                        <code>&lthead&gt&lt/head&gt</code> section or certain layout structures within the
+
+                        <code>&ltbody&gt&lt/body&gt</code> section.
+                        Therefore, we introduced the concept of template inheritance, which allows us to reuse a base
+                        template and modify only
+                        the specific content that needs to be displayed according to our requirements.
+
+                    <pre>
+                                    <code>
+                                        the Jinja syntax for template inheritance:
+        
+                                        {% extends "base.html" %}
+        
+                                        {% block content %}
+        
+                                        the for loop function in Jinja:
+        
+                                        {% for item in item_list %}
+                                            &ltp&gt{{ item }}&lt/p&gt
+                                        {% endfor %}
+        
+                                        the if statement function in Jinja: 
+        
+                                        {% if condition %}
+                                            &ltp&gtCondition is true.&lt/p&gt
+                                        {% else %}
+                                            &ltp&gtCondition is false.&lt/p&gt
+                                        {% endif %}
+                                    </code>
+                                </pre>
+
+                    <h2 style="padding-top: 80px;">Receiving and transfering input data</h2>
+                    <pre>
+                                    <code>
+                                        Jinja 
+        
+                                        &ltform class="card form-card" action="{{ url_for('thank_you_t2') }}" method="get"&gt&lt/form&gt
+        
+                                    </code>
+                            </pre>
+
+                    <p style="margin: 40px;"></p>
+                    <code>action="{{ url_for('thank_you_t2') }}"</code>
+                    <p>This means that when the user clicks “Submit”, the browser sends an HTTP request to the Flask
+                        route named
+                        thank_you_t2.</p>
+                    <code>method="get"</code>
+                    <p>
+                        This specifies that the form will be submitted using the GET method.
+                    </p>
+
+
+                    <p>In .py file, you can use function <code> request.args.get("specific name")</code>to get the
+                        value. After processing the data you receive, you can use the method we learned last week to
+                        pass the processed data back to a
+                        reserved variable in the HTML template, so that the page can display the processed result based
+                        on the user's input.</p>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>
