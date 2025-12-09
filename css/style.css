@@ -301,3 +301,44 @@ code {
     justify-content: center;
     gap: 18px;
 }
+
+.download-section {
+    margin-top: 30px;
+    text-align: center;
+    animation: flickerText 2s infinite alternate;
+    font-family: 'Courier New', monospace;
+    color: #00ff66;
+}
+
+.download-section p {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.download-section button {
+    background: transparent;
+    border: 2px solid #00ff66;
+    color: #00ff66;
+    padding: 10px 25px;
+    margin: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.download-section button:hover {
+    background: #00ff66;
+    color: black;
+    transform: scale(1.08);
+}
+
+@keyframes flickerText {
+    0% {
+        opacity: .7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
